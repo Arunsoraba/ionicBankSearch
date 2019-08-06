@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="center">Search Bank</ion-title>
+  </ion-navbar>
+  <ion-item>
+    <ion-label>Choose Location</ion-label>
+    <ion-select [(ngModel)]="selectedBank" (ionChange)=getBanks(selectedBank);>
+      <ion-option value="BANGALORE">Bangalore</ion-option>
+      <ion-option value="MUMBAI" selected>Mumbai</ion-option>
+      <ion-option value="CHENNAI">Chenni</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-searchbar
+  [(ngModel)]="searchTerm"
+  (ionChange)="filterItems(searchTerm)"
+></ion-searchbar>
+</ion-header>
+
+ <ion-content class="bank-locator-content">
+  
+<!-- <ion-content>
+   <ion-searchbar
+    [formControl]="searchControl"
+    (ionChange)="onSearchInput()"
+  ></ion-searchbar> 
+
+  <div *ngIf="searching" class="spinner-container">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item.title }}
+    </ion-item>
+  </ion-list>
+</ion-content> -->
+<div *ngIf="searching" class="spinner-container">
+  <ion-spinner></ion-spinner>
+</div>
+  <ion-list>
+    <ion-item *ngFor="let ele of filteredBankList" class="bank-details">
+      <h2>Bank Name {{ele.bank_name}}</h2>
+      <p>Branch {{ele.branch}}</p>
+      <p>IFSC {{ele.ifsc}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content> 

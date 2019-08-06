@@ -1,0 +1,7 @@
+{
+  "name": "bankSearch",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
