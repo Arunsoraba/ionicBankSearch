@@ -8,4 +8,17 @@ page-home {
         text-align: center;
         padding: 10px;
       }
+      .footer{
+        .toolbar{
+          min-height: 23px;
+        }
+      }
+      .footer-bank-length {
+        position: fixed;
+        bottom: 0px;
+        background: #333;
+        color: #fff;
+        width: 100%;
+        padding: 3px;
+      }
 }

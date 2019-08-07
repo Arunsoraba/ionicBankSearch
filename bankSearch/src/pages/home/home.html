@@ -7,7 +7,7 @@
     <ion-select [(ngModel)]="selectedBank" (ionChange)=getBanks(selectedBank);>
       <ion-option value="BANGALORE">Bangalore</ion-option>
       <ion-option value="MUMBAI" selected>Mumbai</ion-option>
-      <ion-option value="CHENNAI">Chenni</ion-option>
+      <ion-option value="CHENNAI">Chennai</ion-option>
     </ion-select>
   </ion-item>
   <ion-searchbar
@@ -44,4 +44,10 @@
       <p>IFSC {{ele.ifsc}}</p>
     </ion-item>
   </ion-list>
-</ion-content> 
+  
+  </ion-content> 
+  <ion-footer no-shadow *ngIf="bankList.length">
+    <ion-toolbar>
+      <div class ="footer-bank-length"> Showing {{filteredBankList.length}} <span *ngIf="searchTerm">of {{ bankList.length }}</span> records.</div>
+    </ion-toolbar>
+  </ion-footer>

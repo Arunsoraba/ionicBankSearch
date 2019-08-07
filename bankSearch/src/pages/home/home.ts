@@ -17,6 +17,8 @@ export class HomePage {
     this.searchTerm = "";
     console.log(bank);
     this.searching = true;
+    this.filteredBankList = [];
+    this.bankList = [];
     this.homeProvider.getBanks(bank).then(
       res => {
         // console.log(res);
