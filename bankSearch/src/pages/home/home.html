@@ -12,7 +12,7 @@
   </ion-item>
   <ion-searchbar
   [(ngModel)]="searchTerm"
-  (ionChange)="filterItems(searchTerm)"
+  (ionChange)="filterItems(searchTerm)" debounce="700" animated placeholder="Search By Bankname"
 ></ion-searchbar>
 </ion-header>
 
