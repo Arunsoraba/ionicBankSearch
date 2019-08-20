@@ -42,8 +42,9 @@ export class HomePage {
 
   filterItems(searchTerm) {
     this.searching = true;
+    const serchItem = searchTerm.toLowerCase();
     this.filteredBankList = this.bankList.filter((item) => {
-      return item.bank_name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+      return item.bank_name.toLowerCase().indexOf(serchItem) > -1 || item.branch.toLowerCase().indexOf(serchItem) > -1 || item.ifsc.toLowerCase().indexOf(serchItem) > -1;
     });
     this.searching = false;
   }
